@@ -5,7 +5,7 @@
 **WordPlay** is a web application to help people learn new vocabulary words, improve their vocabulary, and test their knowledge. I mainly got my inspiration from the earlier **Finance** project I did, and based my foundation on it.
 ### Tools:
 I used the **Flask** framework for this, which includes:
- - Python
+ - Pythonn
  - HTML
  - CSS
 I wanted to use a little bit of Javascript on it, but decided not to later. Oh wait, I forgot one language that works behind the scenes. **SQL**! I used a *lot* of Sqlite for this project.
