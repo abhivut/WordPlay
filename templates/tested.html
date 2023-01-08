@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block main %}
+    <p class="fs-3 text-info">Test</p>
+    <hr>
+    <div style="visibility: {{ hiddenF }}">
+        <form action="/tested" method="post">
+            {% for set in sets %}
+                <p class="fs-5 text-danger">{{ set.definition }}:</p>
+                <input autocomplete="off" class="form-control mx-auto w-auto text-info" name={{ set.word }} placeholder="Answer" type="text">
+                <br>
+            {% endfor %}
+            <p></p>
+            <button class="btn btn-danger form-control mx-auto w-auto" type="submit" style="width:8%; height:50px; font-size: 15px">Submit</button>
+        </form>
+    </div>
+
+    <p class="fs-4 text-success" style="visibility: {{ hidden }}">Score: {{ score }}!</p>
+    <p class="fs-5 text-info" style="visibility: {{ hidden }}">Words to study:</p>
+    {% for word in wrong %}
+        <p class="fs-5 text-danger" style="visibility: {{ hidden }}">{{ word }}</p>
+    {% endfor %}
+{% endblock %}

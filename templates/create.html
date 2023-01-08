@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Add Word
+{% endblock %}
+
+{% block main %}
+    <nav aria-label="..." >
+        <ul class="pagination pagination-lg justify-content-center">
+        <li class="page-item"><a class="page-link text-danger" href="/add">Word</a></li>
+        <li class="page-item"><a class="page-link text-danger" href="/create">Set</a></li>
+        </ul>
+    </nav>
+    <p class="fs-5 text-info">Create a Set</p>
+    <hr>
+    <p class="fs-6 text-warning">{{ p }}</p>
+    <form action="/create" method="post">
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto text-info" name="set" placeholder="Set" type="text">
+        </div>
+        <p></p>
+        <button class="btn btn-primary btn-danger" type="submit">Create</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Word
+{% endblock %}
+
+{% block main %}
+    <nav aria-label="...">
+        <ul class="pagination pagination-lg justify-content-center">
+        <li class="page-item"><a class="page-link text-danger" href="/deleteW">Word</a></li>
+        <li class="page-item"><a class="page-link text-danger" href="/deleteS">Set</a></li>
+        </ul>
+    </nav>
+    <p class="fs-5 text-info">Delete a Word</p>
+    <hr>
+    <p class="fs-6 text-warning">{{ p }}</p>
+    <form action="/deleteW" method="post">
+        <div class="mb-3">
+        <select class="btn btn-outline-secondary dropdown-toggle" placeholder="Select a Set" name = "set">
+            {% for set in sets %}
+            <option>{{ set.setName }}</option>
+            {% endfor %}
+        </select>
+        </div>
+        <div class="mb-3">
+            <input autocomplete="off" autofocus class="form-control mx-auto w-auto text-info" name="word" placeholder="Word" type="text">
+        </div>
+        <button class="btn btn-primary btn-danger" type="submit">Delete</button>
+    </form>
+{% endblock %}

@@ -1,0 +1,44 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Your Sets
+{% endblock %}
+
+{% block main %}
+
+        <p class="fs-1 text-info">Hello, {{ user }}!</p>
+
+        <p class="fs-5 text-danger">Display Set</p>
+        <p class="fs-6 text-warning">{{ p }}</p>
+        <form action="/" method="post">
+            <select class="btn btn-outline-secondary dropdown-toggle" placeholder="Select a Set" name = "display">
+                {% for Dset in Dsets %}
+                    <option>{{ Dset.setName }}</option>
+                {% endfor %}
+                <option>View All</option>
+            </select>
+            <p></p>
+            <button class="btn btn-danger form-control mx-auto w-auto" id="submit" type="submit">View</button>
+        </form>
+
+        <hr>
+        <div id="h" style="visibility: {{ view }}">
+            <table class ="table">
+                <tr>
+                    <th>Set</th>
+                    <th>Word</th>
+                    <th>Definition</th>
+                </tr>
+                {% for set in sets %}
+                    <tr>
+                        <td>{{ set.setName }}</td>
+                        <td>{{ set.word }}</td>
+                        <td>{{ set.definition }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+
+            <p class = "h6">Number of words: {{ len2 }}</p>
+        </div>
+        <p class="fs-5 text-warning" style="visibility: {{ hiddenN }}">You currently do not have any sets! Go to the Add page to create a set!</p>
+{% endblock %}

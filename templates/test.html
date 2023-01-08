@@ -1,0 +1,21 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Test
+{% endblock %}
+
+{% block main %}
+        <p class="fs-3 text-info">Test</p>
+        <hr>
+        <p class="fs-5 text-danger">Select a Set</p>
+        <form action="/test" method="post">
+            <select name="set" class="btn btn-outline-secondary dropdown-toggle">
+                {% for Dset in Dsets %}
+                    <option>{{ Dset.setName }}</option>
+                {% endfor %}
+            </select>
+            <p></p>
+            <button type="submit" class="btn btn-danger">Test</button>
+        </form>
+
+{% endblock %}

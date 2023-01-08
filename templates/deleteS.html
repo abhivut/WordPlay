@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Delete Set
+{% endblock %}
+
+{% block main %}
+    <nav aria-label="..." >
+        <ul class="pagination pagination-lg justify-content-center">
+        <li class="page-item"><a class="page-link text-danger" href="/deleteW">Word</a></li>
+        <li class="page-item"><a class="page-link text-danger" href="/deleteS">Set</a></li>
+        </ul>
+    </nav>
+    <p class="fs-5 text-info">Delete a Set</p>
+    <hr>
+    <form action="/deleteS" method="post">
+        <div class="mb-3">
+        <select class="btn btn-outline-secondary dropdown-toggle" placeholder="Select a Set" name = "set">
+            {% for set in sets %}
+            <option>{{ set.setName }}</option>
+            {% endfor %}
+            <option>All</option>
+        </select>
+        </div>
+        <button class="btn btn-primary btn-danger" type="submit">Delete</button>
+    </form>
+{% endblock %}
